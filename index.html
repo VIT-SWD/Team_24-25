@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secretary Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Sumana:wght@700&display=swap");
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title {+
+            width: 100%;
+            text-align: center;
+            padding: 45px 0 30px 0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 50px;
+            height: 5px;
+            background: #353535;
+            position: absolute;
+            left: calc(50% - 25px);
+            bottom: 0;
+        }
+
+        .section-title h1 {
+            font-size: 40px;
+            letter-spacing: 2px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .img,
+        .img2 {
+            max-width: 270px;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        article {
+
+            margin: 50px auto;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        article img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+        }
+
+        article img:first-child {
+            box-shadow: 0px 10px 15px -3px rgba(233, 233, 233, 0.3);
+        }
+
+        article img:last-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 90%;
+            height: 90%;
+            opacity: 0;
+            transform: translateY(30%) scale(0.9);
+            border-radius: 12px;
+        }
+
+        article:hover img:first-child {
+            transform: perspective(500px) rotateX(30deg) translateY(-10%);
+            filter: blur(5px);
+        }
+
+        article:hover img:last-child {
+            opacity: 1;
+            transform: translateY(0%) scale(1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0%) scale(1);
+            }
+
+            50% {
+                transform: translateY(-5%) scale(1.05);
+            }
+        }
+
+        .desc,
+        .desc2 {
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            animation: slideInFromRight 2s forwards;
+        }
+
+        .desc2 {
+            order: initial;
+            transform: translateX(-100%);
+            animation: slideInFromLeft 3s forwards;
+        }
+
+        .img img,
+        .img2 img {
+            width: 250px;
+            height: 250px;
+            border: 5px solid #234d20;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .img img:hover,
+        .img2 img:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icons {
+            display: flex;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 20px;
+            margin: 10px 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #234d20;
+        }
+
+        @media (max-width: 600px) {
+            .row {
+                flex-direction: column;
+                gap: 5px;
+                align-items: center;
+            }
+
+            #row2 {
+                flex-direction: column-reverse;
+            }
+
+            .desc,
+            .desc2 {
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .img2 {
+                margin-top: 10px;
+                order: initial;
+            }
+
+            .openion {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0 10px 0;
+            }
+        }
+
+        .mar {
+            margin: 5px 0px 5px 0px;
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Secretary */
+        h1.text-primary {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .pr-section {
+            margin-top: 50px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .person {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            overflow: hidden;
+            z-index: 5;
+        }
+
+        .person {
+            position: relative;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .person::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            /* background-color: #00d084; Background color behind the person */
+            z-index: -1;
+            /* Ensure the background is behind the image */
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            height: 400px;
+            width: 300px;
+            cursor: pointer;
+            transform: scale(0.8);
+            transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .square {
+            display: none;
+        }
+
+        .person-card {
+            /* position: relative; */
+            /*  width: 300px;
+            height: 400px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 15px;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+            transition: transform 0.3s ease-in-out;
+            background-color: white;
+        }
+
+        .person-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .person-card:hover img {
+            /* transform: scale(1.2) translateY(-20px);   */
+            background: none
+        }
+
+        .person-card:hover {
+            transform: scale(1.1) translateY(-25px);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: -200px;
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #e6e6e6;
+            transition: bottom 0.3s ease-in-out;
+            z-index: 2;
+        }
+
+        .person-card:hover .overlay {
+            /* top: 300px; */
+            bottom: -15px;
+        }
+
+        .overlay h2 {
+            /* display: none; */
+            /* margin: 10px 0; */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
+            color: #007bff;
+            font-size: 24px;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .social-icons a{
+            color: #09ff00;
+        }
+
+        .social-icons a:hover {
+            color: #0056b3;
+        }
+
+
+        .person img {
+            position: relative;
+            width: 92%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .divider {
+            height: 3px;
+            width: 80px;
+            border-radius: 5px;
+            background: var(--color);
+            margin-bottom: 10px;
+        }
+
+        .person h1 {
+            color: #464646;
+            margin: 10px 0 0 0;
+            font-family: 'Merriweather', serif;
+        }
+
+        .person p {
+            font-family: Arial;
+            color: #6e6e6e;
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .pr-cards {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+            justify-content: flex-end;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .person {
+            flex: 0 0 auto;
+            margin: 20px;
+        }
+
+        .pr-cards::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .pr-cards::-webkit-scrollbar-thumb {
+            background-color: #007bff;
+            border-radius: 10px;
+        }
+
+        .pr-cards::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        @keyframes slideOut {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-500px);
+            }
+        }
+
+        .slide-out {
+            animation: slideOut 1s ease forwards;
+        }
+
+        .scroller {
+            max-width: 100%;
+        }
+
+        .scroller[data-animated="true"] {
+            overflow: hidden;
+            /* -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); */
+        }
+
+        .scroller[data-animated="true"] .scroller__inner {
+            width: max-content;
+            flex-wrap: nowrap;
+            animation: scroll var(--_animation-duration, 90s) var(--_animation-direction, reverse) linear infinite;
+        }
+
+        .scroller[data-direction="right"] {
+            --_animation-direction: reverse;
+        }
+
+        .scroller[data-direction="left"] {
+            --_animation-direction: forwards;
+        }
+
+        .scroller[data-speed="fast"] {
+            --_animation-duration: 90s;
+            /* Slower fast speed */
+        }
+
+        .scroller[data-speed="slow"] {
+            --_animation-duration: 200s;
+            /* Slower slow speed */
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translate(calc(-50% - 0.5rem));
+            }
+        }
+
+        .scroller__inner {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            /* Ensures items wrap to a new line */
+            gap: 20px;
+            /* Adds space between cards */
+        }
+
+
+        .person {
+            flex: 1 1 250px;
+            /* Adjust card width as needed */
+            max-width: px;
+            margin-bottom: 10px;
+            /* Adds space below each card */
+        }
+
+
+        .person-card {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .person-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .person-card:hover img {
+            transform: scale(1);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: bottom 0.5s ease;
+            color: white;
+        }
+
+        .person-card:hover .overlay {
+            bottom: 0;
+        }
+
+        .overlay h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #234d20;
+        }
+
+        .divider {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-weight: bolder;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        .scroller {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+        }
+
+        .scroller__inner {
+            display: flex;
+            animation: scrollX 20s linear infinite;
+            /* Adjust the duration to control speed */
+        }
+
+        @keyframes scrollX {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .scroller {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+
+        .person {
+            flex: 0 0 auto;
+            pointer-events: auto;
+            transition: transform 0.2s ease;
+        }
+
+        #op{
+            background: none
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Leads -->
+
+    <div class="container-A">
+        <div class="section-title">
+            <h1>Team 2024-2025</h1>
+            <h1>Leads</h1>
+            <h3 style="font-weight: bolder; font-size: calc(1.3rem + .6vw);"><i>Leadership is about knowing the way,
+                    taking the path &amp; showing the
+                    way.<br>
+                    Introducing our charismatic, influential &amp; passionate Leads, all of whom have great ideas for
+                    the
+                    committee!</i></h3>
+        </div>
+
+        <div class="row">
+            <div class="img">
+                <!-- <article> -->
+                    <img src="IMG10000.png" alt="Omkar Deshmane">
+                    <!-- <img id="op" src="IMG10000.png" alt="Omkar Deshmane"> -->
+                </article>
+            </div>
+            <div class="desc">
+                <h2 class="mar">Omkar Deshmane</h2>
+                <h3 style="font-weight: bolder;">Chairperson</h3>
+                <p class="openion mar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel metus non
+                    magna interdum tincidunt.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="ro w2">
+            <div class="desc2">
+                <h2 class="mar">Ram Vaidya</h2>
+                <h3 style="font-weight: bolder;">Chairperson</h3>
+                <p class="openion mar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel metus non
+                    magna interdum tincidunt.</p>
+                <div class="social-icons" style="color: rgb(16, 10, 10);">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="img2">
+                <!-- <article> -->
+                    <!-- <img src="IMG007.png" alt="Ram Vaidya"> -->
+                    <img  id="op" src="IMG007.png" alt="Ram Vaidya">
+                <!-- </article> -->
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- Secretary -->
+    <h1 class="text-primary text-center">Secretary</h1>
+    <p class="lead mt-4 text-center">
+        This group of students can achieve much more together than any individual can alone, & their
+        achievements will surpass all expectations.<br>
+        They have the ability to turn the visions into reality & make them come true.
+    </p>
+
+    <div class="pr-section row align-items-center justify-content-start">
+        <div class="pr-text  text-center">
+            <h2 class="mt-5">PR and Outreach</h2>
+            <p>Team Public Relations & Outreach is seeking to reach a broader audience by spreading awareness about
+                social initiatives and creating relationships with influencers.</p>
+        </div>
+        
+        <div class="scroller">
+            <div class="pr-cards scroller__inner d-flex justify-content-start">
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0912-Photoroom.png" alt="Pratham Chintawar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/pratham-chintawar" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/pratham.chintawar" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/PrathamC12" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Pratham Chintawar</h2>
+                    <p>Fy SOCIAL REPRESENTATIVE</p>
+                </div>
+                
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Ayush Deokar.png" alt="Ayush Deokar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/ayush-deokar-a98811257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Ayush Deokar</h2>
+                    <p>OUTREACH SECRETARY </p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_3534-Photoroom.png" alt="Sujit Kanawde">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/sujit_kanawade12?igsh=MXNvanFrOTh0MWg4aA=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sujit Kanawde</h2>
+                    <p>OUTREACH SECRETARY </p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Dnyaneshwari Ghuge-Photoroom.png" alt="Dnyaneshwari Gughe">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/dnyaneshwari-ghuge-455ba1297/"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/dnyaneshwari05_?igsh=NDBjM29ubHJraWJq"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/Dnyaneshwari_G" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Dnyaneshwari Gughe</h2>
+                    <p>NSS SECRETARY</p>
+                </div>
+
+            
+                
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Girish Bagul.png" alt="Girish Bagul">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/girish-bagul-057ybh?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/girishbagul07?igsh=MXRrbW1hMHB0cGdqOA=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/girishbagul07?t=GnWEYILnK2KQbT_FjDc0JA&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Girish Bagul</h2>
+                    <p>SPONSORSHIP SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Sairaj Abnave_-Photoroom.png" alt="Sairaj Abnav">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/sairaj-abnave-06988925a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/sai_raj824?igsh=a2tid2pmOWN0d2c3"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/sai_raj1908?t=1EV7lOn4jCxkJeMUbxg8hg&s=08" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sairaj Abnav</h2>
+                    <p>SPONSORSHIP SECRETARY</p>
+                </div>
+
+
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0942-Photoroom.png" alt="Aryan Chaure">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/aryan-chaure-189b87258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://x.com/chaure_aryan?t=9R58I_D8fh0EZoiHmQ5X8A&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/aryanchaure?igsh=MXV4M2Q2N28zMDBubg=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Aryan Chaure</h2>
+                    <p>VENUE & RESOURCE SECRETARY</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="pr-section row align-items-center justify-content-start">
+        <div class="pr-text  text-center">
+            <h2 class="mt-5">SOCIAL ACTIVITY</h2>
+            <p>In addition to helping one individual, we aim to change hundreds of lives with our phenomenal social
+                activity team, which conducts and oversees the rollout of social activities.</p>
+        </div>
+
+        <div class="scroller" data-speed="slow">
+            <div class="pr-cards scroller__inner d-flex justify-content-start">
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0948-Photoroom.png" alt="Anant Khot">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/anant-khot-62177224b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/k__anant?igsh=MWxqYTZlb3NwdmZlbw=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/KhotAnant73762?t=jDwXxMDyMg7Y3UqcmPlWig&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Anant Khot</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+
+                
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0936-Photoroom.png" alt="Arushi Kadam">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/arushi-kadam?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/arushiiee_?igsh=MXg1ZHBieHZ4M2tmNQ=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Arushi Kadam</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Diksha parasharam.png" alt="Diksha Parsharam">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/diksha-parsharam-5747692ab/" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/dikshaa_p25?igsh=MTNmZzk1bzVuM2NyMg=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Diksha Parsharam</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0946-Photoroom.png" alt="Harshita Yadav">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/harshita-yadav-5576b8260/" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/_harshita_3001/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/Harshita22Yadav" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Harshita Yadav</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="kshitij-Photoroom.png" alt="Kshitij Gedam">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/kshitij-anandrao-gedam-aaa65928a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/kshitij_anandrao_gedam?igsh=MTNhNXZweHVtNmZ1Ng=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Kshitij Gedam</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="_DSC4034 copy~2-Photoroom.png" alt="Rajwardhan Rokade">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/rajwardhan-rokade-218785285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/rajjr_?igsh=MWNvOG5zczVxOGo1MA=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Rajwardhan Rokade</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_20240813_214928-Photoroom.png" alt="Rohit Mutha">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/rohit-mutha-843a8b195" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/rohit_m0109?igsh=djhlYTdreGN5MXgx"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/Rohit8628090150?t=HGFM4IzjD_kBfgWHK8dNcQ&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Rohit Mutha</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+            
+                
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0926-Photoroom.png" alt="Rushikesh Patil ">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/rushikesh-patil-a1890025b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/_r.u.s.h.i_7?igsh=MjVxZnlrcHJscDRv&utm_source=qr"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Rushikesh Patil</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY </p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_8998-Photoroom.png" alt="Sahil Kumbhar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/sahil-kumbhar-473669254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/_sahilkumbhar_?igsh=ZjZseWpsbHBhYm5x"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/sahil_kumbhar04?t=HBOyzBDOU5DG67vsoxUKpA&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sahil Kumbhar</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0939-Photoroom.png" alt="Sandip Pawar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/sandip-pawar-791b94258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/sandippawar6062?igsh=MWQxdWNuZjYzMTB0MQ=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/Pawar_Sandip07?t=LY6_49KBfwMxWYAqu3KNUw&s=08"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sandip Pawar</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0929-Photoroom.png" alt="Sayali Kadam">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="www.linkedin.com/in/sayali-kadam-2612332a9" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/sayalikadam144?igsh=bGo4aTNlNWhsZ3Uy"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sayali Kadam</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0902-Photoroom.png" alt="Tejas Hatadikar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/tejas-hatedikar-09a868263/" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/tejas.spammm?igsh=MWl4NzNxZnZjeG9jNQ=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Tejas Hatedikar</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+                
+
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="DSC_8984-Photoroom.png" alt="Vivek Shejole">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/vivek_shejole_39?igsh=eXZwOTV5cTZoNnU3"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/vivekshejole1?t=x13KoUniWlRXPJO6cbLIRw&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Vivek Shejole</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+                
+
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0899-Photoroom.png" alt="Somesh Deshmukh">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/somesh-deshmukh-b543b2262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/sarkar5100_?igsh=amwzOGg1MHVpcXNp"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Somesh Deshmukh</h2>
+                    <p>SOCIAL ACTIVITY SECRETARY</p>
+                </div>
+
+                
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_5672-Photoroom.png" alt="Parth Jadhav">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/parthjadhav325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/parthjadhav325?igsh=eG5objc4ZHQwMTFw&utm_source=qr"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/KhotAnant73762?t=jDwXxMDyMg7Y3UqcmPlWig&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Parth Jadhav</h2>
+                    <p>ANIMAL WELFARE SECRETARY</p>
+                </div>
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG-20240824-WA0029-Photoroom.png" alt="Pranjal Gajbhiye">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/pranjal-gajbhiye-4762342ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/k__anant?igsh=MWxqYTZlb3NwdmZlbw=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/KhotAnant73762?t=jDwXxMDyMg7Y3UqcmPlWig&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Pranjal Gajbhiye</h2>
+                    <p>ANIMAL WELFARE SECRETARY</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pr-section row align-items-center justify-content-start">
+        <div class="pr-text  text-center">
+            <h2 class="mt-5">Technical Team</h2>
+            <p>The Technical team handles technical aspects of development or any other financial aspects along with
+                finding a way to introduce it to society and securing a powerful foothold.</p>
+        </div>
+
+        <div class="scroller">
+            <div class="pr-cards scroller__inner d-flex justify-content-start">
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Rudra Kochari photo-Photoroom.png" alt="Rudra Kochari">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="www.linkedin.com/in/rudrak18" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/rudra_kochari?igsh=MW43bHlpd3dqd2Jvcg=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Rudra Kochari</h2>
+                    <p>DATABASE SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0946-Photoroom.png" alt="Harshita Yadav">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/harshita-yadav-5576b8260/" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/_harshita_3001/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/Harshita22Yadav" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Harshita Yadav</h2>
+                    <p>WEBSITE SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0920-Photoroom.png" alt="Pranav Doshi">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/pranav-doshi-5463b2249/" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.instagram.com/pranav8doshi" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Pranav Doshi</h2>
+                    <p>WEBSITE SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0934(1)-Photoroom.png" alt="Darshan Gughe">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/darshan-ghuge-213b6025a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/darsh_437?igsh=dzY3M2R0Y2UxOHZ0"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Darshan Ghuge</h2>
+                    <p>FINANCE SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0914-Photoroom.png" alt="Om Shintre">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/om-shintre-o0309" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/omshintre_/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Om Shintre</h2>
+                    <p>FINANCE SECRETARY</p>
+                </div>
+
+
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0883-Photoroom.png" alt="Mohit Deo">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/mohit-deo-bb1b18259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/itz._.moo_hit/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Mohit Deo</h2>
+                    <p>SCHOLORSHIP SECRETARY</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="pr-section row align-items-center justify-content-start">
+        <div class="pr-text  text-center">
+            <h2 class="mt-5">Branding Team</h2>
+            <p>This creative branding team puts together projects using numerous tactics and provides visual stories
+                using a variety of tools and techniques regardless of the subject.</p>
+        </div>
+
+
+    
+        <div class="scroller">
+            <div class="pr-cards scroller__inner d-flex justify-content-start">
+                
+                
+                 <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0955-Photoroom.png" alt="Rutuja Badgujar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/rutu__7805?utm_source=qr&igsh=bThjcm0yemtkbXAy"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Rutuja Badgujar</h2>
+                    <p>ASTHETICS SECRETARY</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG20240824130644-Photoroom.png" alt="Hemashri Patil">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/hemashri-patil-93077331b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/hemashri_patil10?igsh=YWxoNnpvZnh6amwx"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Hemashri Patil</h2>
+                    <p>CONTENT SECRETARY</p>
+                </div>
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Sai_Kadam-Photoroom.png" alt="Sai Kadam">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/sai-kadam-279415263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/saee_169_?igsh=dG9tcHZnNXR2ejhl"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/Saeekadam2?t=b0epwdzQSD3vtjv_GmzOfA&s=08" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sai Kadam</h2>
+                    <p>CONTENT SECRETARY</p>
+                </div>
+                
+
+                 <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Kartik Khope.jpg" alt="Kartik Khope">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/kartik-khope-b8805329a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/kartik_khope/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Kartik Khope</h2>
+                    <p>BRANDING SECRETARY</p>
+                </div>
+
+
+                  <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_6829-Photoroom.png" alt="Parth Burkhe">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/__partho__?igsh=Y3RyNG1jYzFqNHA5"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Parth Burkhe</h2>
+                    <p>MEDIA ACQUISATION & CREATIVES SECRETARY</p>
+                </div>
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG-20240813-WA0034-Photoroom.png" alt="Santosh Khandare">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/santosh-kandhare-4277b825a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/santosh_kandhare45?igsh=MW94Z2Q1M2oyMDcweQ=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Santosh Kandhare</h2>
+                    <p>MEDIA ACQUISATION & CREATIVES SECRETARY</p>
+                </div>
+
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Anjali Kaminwar.png" alt="Anjali Kimawar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/anjali-kaminwar-242209257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/anjalikaminwar?igsh=c3AyZ2JkeXptd2Vh"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Anjali Kimawar</h2>
+                    <p>MULTIMEDIA SECRETARY</p>
+                </div>
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Prajakta Dhole.png" alt="Prajakta Dhole">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/prajakta-d-78884023a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/prajkta6124?igsh=MWo5aHRjYXBiNHZ5Ng=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Prajakta Dhole</h2>
+                    <p>MULTIMEDIA SECRETARY</p>
+                </div>
+                
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_999999.png" alt="Sahil Kakad">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/sahil-kakad-bb6a9030a/" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/_sahilkakad_/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/SAHILKAKAD27390" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sahil Kakad</h2>
+                    <p>MULTIMEDIA SECRETARY</p>
+                </div>
+
+
+          
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Shivam Ghodake.png" alt="Shivam Godkhe">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/shivamghodake?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/shivam_ghodake_/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/shivam_ghodake_?t=KU1-LzoyRQxknfqa6dqQRw&s=09"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Shivam Godkhe</h2>
+                    <p>SOCIAL MEDIA SECRETARY</p>
+                </div>
+
+                
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0939-Photoroom.png" alt="Sandip Pawar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/sandip-pawar-791b94258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/sandippawar6062?igsh=MWQxdWNuZjYzMTB0MQ=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://x.com/Pawar_Sandip07?t=LY6_49KBfwMxWYAqu3KNUw&s=08"
+                                        target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sandip Pawar</h2>
+                    <p>RESEARCH & INOVATION SECRETARY</p>
+                </div>
+
+        
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pr-section row align-items-center justify-content-start">
+        <div class="pr-text  text-center">
+            <h2 class="mt-5">Clubs Under SW&D Committee</h2>
+            <p>Clubs under SW&D aims to engage a wider community by promoting club activities.</p>
+        </div>
+
+        <div class="scroller">
+            <div class="pr-cards scroller__inner d-flex justify-content-start">
+                
+                 <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0899-Photoroom.png" alt="Somesh Deshmukh">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/somesh-deshmukh-b543b2262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/sarkar5100_?igsh=amwzOGg1MHVpcXNp"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Somesh Deshmukh</h2>
+                    <p>PRESIDENT - GREEN CLUB</p>
+                </div>
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="Rudra Kochari photo-Photoroom.png" alt="Rudra Kochari">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="www.linkedin.com/in/rudrak18" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/rudra_kochari?igsh=MW43bHlpd3dqd2Jvcg=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Rudra Kochari</h2>
+                    <p>VICE PRESIDENT - GREEN CLUB</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="IMG_0936-Photoroom.png" alt="Arushi Kadam">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/arushi-kadam?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/arushiiee_?igsh=MXg1ZHBieHZ4M2tmNQ=="
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Arushi Kadam</h2>
+                    <p>VICE PRESIDENT - GREEN CLUB</p>
+                </div>
+
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="./gajanan baviskar.png" alt="gajanan baviskar">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/gajanan-baviskar-8942ba264" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/gajananb_75/"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Gajanan Baviskar</h2>
+                    <p>Eklavya Head</p>
+                </div>
+
+
+                <div class="person" style="--color: #782a2b">
+                    <div class="container">
+                        <div class="person-card">
+                            <div class="square"></div>
+                            <img src="sanika kadam.png" alt="Sanika Kadam">
+                            <div class="overlay">
+                                <h2>Reach Me</h2>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/sanika-kadam-87382a280/"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.linkedin.com/in/sanika-kadam-87382a280"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 style="font-weight: bolder;">Sanika Kadam</h2>
+                    <p>Eklavya Head</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+
+        const scrollers = document.querySelectorAll(".scroller");
+
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            addAnimation();
+        }
+
+        function addAnimation() {
+            scrollers.forEach((scroller) => {
+                // add data-animated="true" to every `.scroller` on the page
+                scroller.setAttribute("data-animated", true);
+
+                // Make an array from the elements within `.scroller-inner`
+                const scrollerInner = scroller.querySelector(".scroller__inner");
+                const scrollerContent = Array.from(scrollerInner.children);
+
+                // For each item in the array, clone it
+                // add aria-hidden to it
+                // add it into the `.scroller-inner`
+                scrollerContent.forEach((item) => {
+                    const duplicatedItem = item.cloneNode(true);
+                    duplicatedItem.setAttribute("aria-hidden", true);
+                    scrollerInner.appendChild(duplicatedItem);
+                });
+            });
+        }
+    </script>
+   
+</body>
+
+</html>
