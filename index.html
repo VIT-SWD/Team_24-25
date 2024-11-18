@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secretary Team</title>
+    <title>Team 24-3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -19,7 +19,7 @@
             align-items: center;
         }
 
-        .section-title {+
+        .section-title {
             width: 100%;
             text-align: center;
             padding: 45px 0 30px 0;
@@ -130,7 +130,8 @@
         .desc2 {
             order: initial;
             transform: translateX(-100%);
-            animation: slideInFromLeft 3s forwards;
+            animation: slideInFromLeft 3s 
+            forwards;
         }
 
         .img img,
@@ -173,9 +174,10 @@
             #row2 {
                 flex-direction: column-reverse;
             }
-
+         
             .desc,
             .desc2 {
+                max-width: 90%;
                 text-align: center;
                 justify-content: center;
                 align-items: center;
@@ -219,10 +221,7 @@
         }
 
         /* Secretary */
-        h1.text-primary {
-            color: #007bff;
-            font-weight: bold;
-        }
+
 
         .lead {
             font-size: 1.25rem;
@@ -358,7 +357,7 @@
             transition: color 0.2s ease-in-out;
         }
 
-        .social-icons a{
+        .social-icons a {
             color: #09ff00;
         }
 
@@ -559,11 +558,17 @@
             margin: 0 10px;
             transition: color 0.3s ease;
         }
+        
 
         .social-icons a:hover {
             color: #234d20;
         }
 
+        .social-icons-b a {
+            color: black;
+            margin: 0 10px;
+            
+        }
         .divider {
             width: 100%;
             height: 2px;
@@ -615,10 +620,14 @@
             transition: transform 0.2s ease;
         }
 
-        #op{
+        #op {
             background: none
         }
-        
+
+        .scroller.active {
+            cursor: grabbing;
+            cursor: -webkit-grabbing;
+        }
     </style>
 </head>
 
@@ -628,9 +637,9 @@
 
     <div class="container-A">
         <div class="section-title">
-            <h1>Team 2024-2025</h1>
-            <h1>Leads</h1>
-            <h3 style="font-weight: bolder; font-size: calc(1.3rem + .6vw);"><i>Leadership is about knowing the way,
+            <h1>Team 2024-2025</h1><br>
+            <h1>Leads</h1><br>
+            <h3 style="font-weight: bolder; font-size: calc(1.3rem + .6vw); "><i>Leadership is about knowing the way,
                     taking the path &amp; showing the
                     way.<br>
                     Introducing our charismatic, influential &amp; passionate Leads, all of whom have great ideas for
@@ -641,16 +650,17 @@
         <div class="row">
             <div class="img">
                 <!-- <article> -->
-                    <img src="IMG10000.png" alt="Omkar Deshmane">
-                    <!-- <img id="op" src="IMG10000.png" alt="Omkar Deshmane"> -->
+                <img src="IMG10000.png" alt="Omkar Deshmane">
+                <!-- <img id="op" src="IMG10000.png" alt="Omkar Deshmane"> -->
                 </article>
             </div>
             <div class="desc">
                 <h2 class="mar">Omkar Deshmane</h2>
                 <h3 style="font-weight: bolder;">Chairperson</h3>
-                <p class="openion mar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel metus non
-                    magna interdum tincidunt.</p>
-                <div class="social-icons">
+                <p class="openion mar">Let's work together to turn small acts of kindness into big changes, creating a
+                    positive and supportive space for everyone.</p>
+
+                <div class="social-icons-b">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -659,13 +669,12 @@
             </div>
         </div>
 
-        <div class="row" id="ro w2">
+        <div class="row" id="row2">
             <div class="desc2">
                 <h2 class="mar">Ram Vaidya</h2>
                 <h3 style="font-weight: bolder;">Chairperson</h3>
-                <p class="openion mar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel metus non
-                    magna interdum tincidunt.</p>
-                <div class="social-icons" style="color: rgb(16, 10, 10);">
+                <p class="openion mar">Every small effort counts, and with your support, we can turn ideas into actions that uplift lives and inspire change around us.</p>
+                <div class="social-icons-b" style="color: black">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -674,8 +683,7 @@
             </div>
             <div class="img2">
                 <!-- <article> -->
-                    <!-- <img src="IMG007.png" alt="Ram Vaidya"> -->
-                    <img  id="op" src="IMG007.png" alt="Ram Vaidya">
+                <img id="op" src="IMG007.png" alt="Ram Vaidya">
                 <!-- </article> -->
             </div>
         </div>
@@ -683,7 +691,7 @@
     <br><br>
 
     <!-- Secretary -->
-    <h1 class="text-primary text-center">Secretary</h1>
+    <h1 style="font-weight: bold; font-size: 40px;" >Secretary</h1>
     <p class="lead mt-4 text-center">
         This group of students can achieve much more together than any individual can alone, & their
         achievements will surpass all expectations.<br>
@@ -696,7 +704,7 @@
             <p>Team Public Relations & Outreach is seeking to reach a broader audience by spreading awareness about
                 social initiatives and creating relationships with influencers.</p>
         </div>
-        
+
         <div class="scroller">
             <div class="pr-cards scroller__inner d-flex justify-content-start">
 
@@ -722,7 +730,7 @@
                     <h2 style="font-weight: bolder;">Pratham Chintawar</h2>
                     <p>Fy SOCIAL REPRESENTATIVE</p>
                 </div>
-                
+
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
@@ -790,8 +798,8 @@
                     <p>NSS SECRETARY</p>
                 </div>
 
-            
-                
+
+
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
@@ -840,7 +848,7 @@
                 </div>
 
 
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -880,7 +888,7 @@
 
         <div class="scroller" data-speed="slow">
             <div class="pr-cards scroller__inner d-flex justify-content-start">
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -906,7 +914,7 @@
                 </div>
 
 
-                
+
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
@@ -1046,8 +1054,8 @@
                     <p>SOCIAL ACTIVITY SECRETARY</p>
                 </div>
 
-            
-                
+
+
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
@@ -1094,7 +1102,7 @@
                     <p>SOCIAL ACTIVITY SECRETARY</p>
                 </div>
 
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1120,7 +1128,7 @@
                 </div>
 
 
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1145,7 +1153,7 @@
                 </div>
 
 
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1169,9 +1177,9 @@
                     <p>SOCIAL ACTIVITY SECRETARY</p>
                 </div>
 
-                
 
-                
+
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1195,9 +1203,9 @@
                     <p>SOCIAL ACTIVITY SECRETARY</p>
                 </div>
 
-                
 
-                
+
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1221,8 +1229,8 @@
                     <p>SOCIAL ACTIVITY SECRETARY</p>
                 </div>
 
-                
-                
+
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1402,7 +1410,7 @@
                 </div>
 
 
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1440,12 +1448,12 @@
         </div>
 
 
-    
+
         <div class="scroller">
             <div class="pr-cards scroller__inner d-flex justify-content-start">
-                
-                
-                 <div class="person" style="--color: #782a2b">
+
+
+                <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
                             <div class="square"></div>
@@ -1512,9 +1520,9 @@
                     <h2 style="font-weight: bolder;">Sai Kadam</h2>
                     <p>CONTENT SECRETARY</p>
                 </div>
-                
 
-                 <div class="person" style="--color: #782a2b">
+
+                <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
                             <div class="square"></div>
@@ -1522,8 +1530,10 @@
                             <div class="overlay">
                                 <h2>Reach Me</h2>
                                 <div class="social-icons">
-                                    <a href="https://www.linkedin.com/in/kartik-khope-b8805329a/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                    <a href="https://www.instagram.com/kartik_khope/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/kartik-khope-b8805329a/" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/kartik_khope/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
                                     <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
                                 </div>
                             </div>
@@ -1535,7 +1545,7 @@
                 </div>
 
 
-                  <div class="person" style="--color: #782a2b">
+                <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
                             <div class="square"></div>
@@ -1555,7 +1565,7 @@
                     <h2 style="font-weight: bolder;">Parth Burkhe</h2>
                     <p>MEDIA ACQUISATION & CREATIVES SECRETARY</p>
                 </div>
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1602,7 +1612,7 @@
                     <h2 style="font-weight: bolder;">Anjali Kimawar</h2>
                     <p>MULTIMEDIA SECRETARY</p>
                 </div>
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1625,7 +1635,7 @@
                     <h2 style="font-weight: bolder;">Prajakta Dhole</h2>
                     <p>MULTIMEDIA SECRETARY</p>
                 </div>
-                
+
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
@@ -1650,7 +1660,7 @@
                 </div>
 
 
-          
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1675,7 +1685,7 @@
                     <p>SOCIAL MEDIA SECRETARY</p>
                 </div>
 
-                
+
 
                 <div class="person" style="--color: #782a2b">
                     <div class="container">
@@ -1700,7 +1710,7 @@
                     <p>RESEARCH & INOVATION SECRETARY</p>
                 </div>
 
-        
+
             </div>
         </div>
 
@@ -1714,8 +1724,8 @@
 
         <div class="scroller">
             <div class="pr-cards scroller__inner d-flex justify-content-start">
-                
-                 <div class="person" style="--color: #782a2b">
+
+                <div class="person" style="--color: #782a2b">
                     <div class="container">
                         <div class="person-card">
                             <div class="square"></div>
@@ -1794,8 +1804,8 @@
                                 <div class="social-icons">
                                     <a href="https://www.linkedin.com/in/gajanan-baviskar-8942ba264" target="_blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="https://www.instagram.com/gajananb_75/"
-                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.instagram.com/gajananb_75/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
                                     <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
                                 </div>
                             </div>
@@ -1815,10 +1825,10 @@
                             <div class="overlay">
                                 <h2>Reach Me</h2>
                                 <div class="social-icons">
-                                    <a href="https://www.linkedin.com/in/sanika-kadam-87382a280/"
-                                        target="_blank"><i class="fab fa-linkedin"></i></a>
-                                    <a href="https://www.linkedin.com/in/sanika-kadam-87382a280"
-                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/sanika-kadam-87382a280/" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.linkedin.com/in/sanika-kadam-87382a280" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
                                     <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
                                 </div>
                             </div>
@@ -1866,7 +1876,63 @@
             });
         }
     </script>
-   
+    <script>
+        document.querySelectorAll('.scroller').forEach(scroller => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            // Desktop Mouse Events
+            scroller.addEventListener('mousedown', (e) => {
+                isDown = true;
+                scroller.classList.add('active');
+                startX = e.pageX - scroller.offsetLeft;
+                scrollLeft = scroller.scrollLeft;
+            });
+
+            scroller.addEventListener('mouseleave', () => {
+                isDown = false;
+                scroller.classList.remove('active');
+            });
+
+            scroller.addEventListener('mouseup', () => {
+                isDown = false;
+                scroller.classList.remove('active');
+            });
+
+            scroller.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - scroller.offsetLeft;
+                const walk = (x - startX) * 2; // Adjust the scroll speed
+                scroller.scrollLeft = scrollLeft - walk;
+            });
+
+            // Mobile Touch Events
+            scroller.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - scroller.offsetLeft;
+                scrollLeft = scroller.scrollLeft;
+            });
+
+            scroller.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - scroller.offsetLeft;
+                const walk = (x - startX) * 2; // Adjust the scroll speed
+                scroller.scrollLeft = scrollLeft - walk;
+            });
+
+            scroller.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            scroller.addEventListener('touchcancel', () => {
+                isDown = false;
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>
