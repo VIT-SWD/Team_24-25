@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="lightslider.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="hover.css">
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <title>Team</title>
+    <style>
+        .section-title::after {
+        }
+
+        .orient-right {
+            -moz-flex-direction: row-reverse;
+            -webkit-flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+        }
+
+        .content_team{
+            margin-top: 20vh;
+            margin-left: 10vh;
+            margin-right: 2.2vh;
+        }
+        .team-4:hover .team-img {
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+            -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+            /* filter: grayscale(200%); */
+            background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+            /*opacity: 1;*/
+          }
+
+        @media screen and (max-width: 736px) and (orientation: portrait) {
+
+            .orient-right {
+                -moz-flex-direction: row-reverse;
+                -webkit-flex-direction: row-reverse;
+                -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+            }
+            .content_team{
+                margin-top: 1vh;
+                margin-left: 2.2vh;
+                margin-right: 2.2vh;
+            }
+
+        }
+    </style>
+</head>
+
+<body style="overflow-x: hidden;overflow-y: hidden;">
+
+    <div class="conatiner-fluid">
+        <div class="row orient-right">
+            <div class="col-lg-7">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box team-4">
+                            <div class="team-img">
+                                <img src="../sec_img/Pranov_Harale.png" alt="Team Image">
+                                <div class="team-content">
+
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h2>Pranov Harale
+                                </h2>
+                                <h3>Database Secretary</h3>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="item-a">
+                        <div class="box team-4">
+                            <div class="team-img">
+                                <img src="../sec_img/Tejas_Choudhari.png" alt="Team Image">
+                                <div class="team-content">
+
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h2>Tejas Choudhari
+                                </h2>
+                                <h3>Finance Secretary</h3>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="item-a">
+                        <div class="box team-4">
+                            <div class="team-img">
+                                <img src="../sec_img/Rishikesh_Unawane.png" alt="Team Image">
+                                <div class="team-content">
+
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h2>Rishikesh Unawane
+                                </h2>
+                                <h3>Website Secretary</h3>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="item-a">
+                        <div class="box team-4">
+                            <div class="team-img">
+                                <img src="../sec_img/Pushkar_Helge.png" alt="Team Image">
+                                <div class="team-content">
+
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h2>Pushkar Helge</h2>
+                                <h3>Scholarship Secretary</h3>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="item-a">
+                        <div class="box team-4">
+                            <div class="team-img">
+                                <img src="../sec_img/Atharva_Panchwagh.png" alt="Team Image">
+                                <div class="team-content">
+
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h2>Atharva Panchwagh</h2>
+                                <h3>Technical Secretary</h3>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="item-a">
+                        <div class="box team-4">
+                            <div class="team-img">
+                                <img src="../sec_img/Vipassana_Telgote.png" alt="Team Image">
+                                <div class="team-content">
+
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h2>Vipassana Telgote</h2>
+                                <h3>Technical Secretary</h3>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+<div class="col-lg-5">
+                <div  class="content_team" style="text-align: center;">
+                    <h1 class="fw-theme mb-3">Technical Team</h1>
+<!--                    <h5 class="fg-theme mb-3">SUBTITLE</h5>-->
+                    <p class="text-muted">The Technical team handles technical aspects of development or any other financial aspects along with finding a way to introduce it to society and securing a powerful foothold.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="lightslider.js"></script>
+
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
+
+<script>
+    $(function () {
+        $(".hey").load("b.html");
+    });
+</script>

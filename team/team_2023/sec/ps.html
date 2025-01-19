@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="lightslider.css" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="hover.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <title>Team</title>
+    <style>
+      .section-title::after {
+      }
+
+      .orient-right {
+        -moz-flex-direction: row-reverse;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+      }
+
+      .content_team {
+        margin-top: 20vh;
+        margin-left: 10vh;
+        margin-right: 2.2vh;
+        margin-top: 30vh;
+      }
+      .team-4:hover .team-img {
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+        /* filter: grayscale(200%); */
+        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+        /*opacity: 1;*/
+      }
+
+      @media screen and (max-width: 736px) and (orientation: portrait) {
+        .orient-right {
+          -moz-flex-direction: row-reverse;
+          -webkit-flex-direction: row-reverse;
+          -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+        }
+        .content_team {
+          margin-top: 1vh;
+          margin-left: 2.2vh;
+          margin-right: 2.2vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="overflow-x: hidden; overflow-y: hidden; margin-top: 20px">
+    <div class="conatiner-fluid">
+      <div class="row orient-left">
+        <div class="col-lg-7">
+          <ul id="autoWidth" class="cs-hidden">
+            <li class="item-a">
+              <div class="box team-4">
+                <div class="team-img">
+                  <img src="../sec_img/Janhavi_Pawar.png" alt="Team Image" />
+                  <div class="team-content"></div>
+                </div>
+                <div class="team-content">
+                  <h2>Janhavi Pawar</h2>
+                  <h3>Planning & Execution Secretary</h3>
+                </div>
+              </div>
+            </li>
+            <li class="item-a">
+              <div class="box team-4">
+                <div class="team-img">
+                  <img src="../sec_img/Rishikesh_Dayma.png" alt="Team Image" />
+                  <div class="team-content"></div>
+                </div>
+                <div class="team-content">
+                  <h2>Rishikesh Dayma</h2>
+                  <h3>Planning & Execution Secretary</h3>
+                </div>
+              </div>
+            </li>
+            <li class="item-a">
+              <div class="box team-4">
+                <div class="team-img">
+                  <img src="../sec_img/Sanskar_Agrawal.png" alt="Team Image" />
+                  <div class="team-content"></div>
+                </div>
+                <div class="team-content">
+                  <h2>Sanskar Agrawal</h2>
+                  <h3>Planning & Execution Secretary</h3>
+                </div>
+              </div>
+            </li>
+            <li class="item-a">
+              <div class="box team-4">
+                <div class="team-img">
+                  <img src="../sec_img/Tanaya_Barabde.png" alt="Team Image" />
+                  <div class="team-content"></div>
+                </div>
+                <div class="team-content">
+                  <h2>Tanaya Barabde</h2>
+                  <h3>Planning & Execution Secretary</h3>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-5">
+          <div class="content_team" style="text-align: center">
+            <h1 class="fw-theme mb-3">Planning and Execution</h1>
+            <!--                    <h5 class="fg-theme mb-3">SUBTITLE</h5>-->
+            <p class="text-muted">
+              A major leap in performance is achieved when the Planning and Execution team coaslesced and made a series of outstanding, superbly executed decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="lightslider.js"></script>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
+
+<script>
+  $(function () {
+    $(".hey").load("b.html");
+  });
+</script>

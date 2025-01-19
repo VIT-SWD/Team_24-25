@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Wheel of Events</title>
+    <link rel="stylesheet" href="/style.e308ff8e.css">
+    <link rel="stylesheet" href="/evo-calendar.min.cdca6ff4.css">
+    <link rel="stylesheet" href="/evo-calendar.midnight-blue.min.8fa67476.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <script src="/style.e308ff8e.js"></script><script src="/evo-calendar.min.cdca6ff4.js"></script><script src="/evo-calendar.midnight-blue.min.8fa67476.js"></script></head>
+  <body>
+    <div class="hero">
+      <div id="calendar"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="/evo-calender.min.97a85aa2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.2/evo-calendar/js/evo-calendar.min.js"></script>
+    <script>$(document).ready(function () {
+  $("#calendar").evoCalendar({
+    theme: "Midnight Blue",
+    calendarEvents: [{
+      id: "Event1",
+      // Event's ID (required)
+      name: "New Year",
+      // Event name (required)
+      date: "January/1/2020",
+      // Event date (required)
+      description: "Atambodh Event is coming.",
+      // type: "holiday", // Event type (required)
+      everyYear: true // Same event every year (optional)
+
+    }, {
+      name: "Vacation Leave",
+      badge: "02/13 - 02/15",
+      // Event badge (optional)
+      date: ["February/13/2020", "February/15/2020"],
+      // Date range
+      description: "Vacation leave for 3 days.",
+      // Event description (optional)
+      type: "event",
+      color: "#63d867" // Event custom color (optional)
+
+    }]
+  });
+});</script>
+  </body>
+</html>

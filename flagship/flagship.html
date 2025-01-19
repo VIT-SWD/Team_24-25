@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Flagship Events</title>
+    <!-- <link rel="stylesheet" href="/styles/flagship.css"> -->
+    <link rel="icon" href="images/SWD-Nav-Icon.png" type="image/x-icon">
+    <style>
+        /* Fonts */
+        @import url(fontawesome-all.min.css);
+        @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i");
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-size: 38px;
+        }
+
+        body {
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+        }
+
+        /* Carousel CSS */
+
+        img {
+            max-width: 100%;
+            height: 30rem;
+            /* vertical-align: middle;
+            width: 100%; */
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        /*border*/
+        .card-border {
+            width: 90%;
+            height: 90%;
+            border: 2px solid white;
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            bottom: 5%;
+            right: 5%;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .dots {
+            padding: 0.5rem;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 800px) {
+            img {
+                height: 12rem;
+            }
+        }
+
+        @media only screen and (max-width: 300px) {
+
+            .prev,
+            .next {
+                font-size: 11px
+            }
+        }
+
+        /* Layout CSS */
+        .container {
+            display: flex;
+            /* background: rgba(3, 75, 19, 0.87); */
+            /* background-color: #f8ef42;
+            background-image: linear-gradient(315deg, #f8ef42 0%, #0fd64f 74%); */
+            background-color: #f2cf43;
+            background-image: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
+            padding: 14px;
+            margin: 30px 30px;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 5px 5px rgb(218, 230, 64);
+        }
+
+        .container .column-66 p {
+            color: white;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column-66 {
+            float: left;
+            width: 66.66666%;
+            padding: 20px 0px;
+        }
+
+        .column-33 {
+            float: left;
+            width: 33.33333%;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .xlarge-font {
+            font-size: 64px;
+            text-transform: uppercase;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        iframe {
+            display: block;
+            max-width: 100%;
+            border: 2px solid rgb(218, 230, 64);
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 1000px) {
+
+            .column-66,
+            .column-33 {
+                width: 100%;
+                text-align: center;
+                padding: auto;
+            }
+
+            .xlarge-font {
+                font-size: 38px;
+            }
+
+            img {
+                margin: auto;
+            }
+
+            iframe {
+                margin: auto;
+                max-width: 100%;
+            }
+        }
+
+        /* Image Gallery CSS */
+        .container-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #f5f4f4;
+            font-size: 13px;
+            font-family: "Arvo", monospace;
+        }
+
+        @supports (display: grid) {
+            .container-2 {
+                display: block;
+            }
+        }
+
+        @supports (display: grid) {
+        }
+
+        .section {
+            display: none;
+            padding: 2rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            .section {
+                padding: 4rem;
+            }
+        }
+
+        @supports (display: grid) {
+            .section {
+                display: block;
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 150px;
+            grid-auto-flow: row dense;
+        }
+
+        .item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            box-sizing: border-box;
+            background: #0c9a9a;
+            color: #fff;
+            grid-column-start: auto;
+            grid-row-start: auto;
+            color: #fff;
+            background: url("images/g1.jpg");
+            background-size: cover;
+            background-position: center;
+            box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            counter-increment: item-counter;
+        }
+
+        .item:nth-of-type(2n) {
+            background-image: url("images/g2.jpg");
+        }
+
+        .item:nth-of-type(3n) {
+            background-image: url("images/g3.jpeg");
+        }
+
+        .item:nth-of-type(4n) {
+            background-image: url("images/g4.jpg");
+        }
+
+        .item:nth-of-type(5n) {
+            background-image: url("images/g6.jpg");
+        }
+
+        .item:nth-of-type(6n) {
+            background-image: url("images/g7.jpg");
+        }
+
+        .item:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.3;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .item:hover:after {
+            opacity: 0;
+        }
+
+        .item--medium {
+            grid-row-end: span 2;
+        }
+
+        .item--large {
+            grid-row-end: span 3;
+        }
+
+        .item--full {
+            grid-column-end: auto;
+        }
+
+        @media screen and (min-width: 768px) {
+            .item--full {
+                grid-column: 1/-1;
+                grid-row-end: span 2;
+            }
+        }
+
+        .item__details {
+            position: relative;
+            z-index: 1;
+            padding: 10px;
+            color: #444;
+            background: #fff;
+            /* text-transform: lowercase; */
+            letter-spacing: 1px;
+            color: #828282;
+        }
+
+        .item__details:before {
+            /* content: counter(item-counter); */
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding-right: 0.5em;
+            color: #444;
+        }
+
+
+
+        a {
+  background-color: #234d20;
+  box-shadow: 0 1px 0 black;
+  color: #c9df8a;
+  padding: 0.4em 1em;
+  position: relative;
+  text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+  text-transform: uppercase;
+            border-radius: 9em;
+}
+
+a:hover {
+  background: none;
+    font-weight: bolder;
+    color: #234d20;
+  cursor: pointer;
+}
+
+a:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+
+    </style>
+</head>
+
+<body oncontextmenu="return false">
+<!-- carousel -->
+<div class="slideshow-container" id="bgslider">
+
+<!--    <div class="mySlides fade">-->
+<!--        <img src="images/slider1.png" style="width:100%">-->
+<!--        <div class="card-border"></div>-->
+<!--    </div>-->
+
+    <div class="mySlides fade">
+        <img src="images/slider3.jpg" style="width:100%">
+        <div class="card-border"></div>
+    </div>
+
+<!--    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
+<!--    <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+
+</div>
+<!--<div style="text-align:center" class="dots">-->
+<!--    <span class="dot" onclick="currentSlide(1)"></span>-->
+<!--    <span class="dot" onclick="currentSlide(2)"></span>-->
+<!--</div>-->
+
+
+<!-- Mi Atrey Boltay! -->
+<div class="container">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color: rgb(218, 230, 64);">Mi Atrey Boltoy!</h1>
+            <h2 class="large-font" style="color: white;">Students Speaking About Things That Matter</h2><br>
+            <p>"Me Atre Boltoy" is a grand elocution competition named after the famous Marathi speaker Acharya P. K.
+                Atre. This competition gave students a platform to express their
+                opinions freely and showcase their depth of knowledge. The content, voice delivery and modulation, body
+                language and audience connect are some factors building the best
+                'Vakta'.</p><br>
+            <a href="miatre/miatre.html" target="_blank">know MORE</a>
+
+        </div>
+        <div class="column-33">
+            <figure class="swing">
+                <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/9xoo9GvsK5o?autoplay=1&mute=1&showinfo=0&controls=0&loop=1&playlist=9xoo9GvsK5o"
+                        allow=" autoplay;" allowfullscreen></iframe>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<!-- Utkarsh -->
+<div class="container" style="background-image: linear-gradient(225deg, #19a186, #f2cf43);">
+    <div class="row">
+        <div class="column-33">
+            <figure class="swing">
+                <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/GcuOn-wDh1A?autoplay=1&mute=1&showinfo=0&controls=0&loop=1&playlist=GcuOn-wDh1A"
+                        allow=" autoplay;" allowfullscreen></iframe>
+            </figure>
+        </div>
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color: rgb(218, 230, 64);">Utkarsh</h1>
+            <h2 class="large-font" style="color: white;">Igniting minds</h2> <br>
+            <p>In hard times like now, in context to the ongoing pandemic, we thought Covid 19 shouldn't be a hurdle
+                to spread knowledge and do good deeds through virtual platforms As Good education is a foundation
+                for a better future so we came up with an initiative Utkarsh- Igniting Minds, Online.
+                Volunteers will teach them various attributes apart from their normal curriculum like Personality
+                development, Science experiments, Career paths, Untold Indian History and freedom fighters and many
+                more things with an attempt to create unlimited possibilities for their bright future.</p><br>
+            <a href="utkrash/utkarsh.html" target="_blank">know MORE</a>
+        </div>
+    </div>
+</div>
+
+<!-- Blood-D -->
+<div class="container">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color: rgb(218, 230, 64);">Blood-D</h1>
+            <h2 class="large-font" style="color: white;">जिंदगी से जिंदगी की ओर</h2><br>
+            <p>With the thought of spreading awareness of blood donation and providing blood to blood
+                banks, the concept of blood donation camp came into picture. This event is not only about a one-day camp
+                but different tasks like aesthetics, rally, street play, check-ups, refreshments and a lot more.
+                ‘Blood-D’, which was an initiative for blood donation by college students, now is augmented with the
+                participation of other people outside the college as well. The 2019 event was a
+                chartbuster with 535 pints of blood donated to AFMC and Sasoon hospitals.</p><br>
+            <a href="blood-d/blood.html" target="_blank">know MORE</a>
+        </div>
+        <div class="column-33">
+            <figure class="swing">
+                <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/eifgT3ustW0?autoplay=1&mute=1&showinfo=0&controls=0&loop=1&playlist=eifgT3ustW0"
+                        allow=" autoplay;" allowfullscreen></iframe>
+            </figure>
+        </div>
+    </div>
+</div>
+
+
+<!-- Aatmabodh -->
+<div class="container" style="background-image: linear-gradient(225deg, #19a186, #f2cf43);">
+    <div class="row">
+        <div class="column-33">
+            <figure class="swing">
+                <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/LcygJyagzd8?autoplay=1&mute=1&showinfo=0&controls=0&loop=1&playlist=LcygJyagzd8"
+                        allow=" autoplay;" allowfullscreen></iframe>
+            </figure>
+        </div>
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color: rgb(218, 230, 64);">Aatmabodh</h1>
+            <h2 class="large-font" style="color: white;">Digital literacy program</h2><br>
+            <p>Aatmabodh is the initiative taken by SW&D for the betterment of society. It is a flagship event of
+                our college. Among the kingpins are the elderly and homemakers. Senior citizens and homemakers learn
+                basic skills from students at our college. Pandemics could not dampen the enthusiasm of students.
+                The committee members made last year's event a huge success by conducting it online with a high
+                level of dedication and willingness to do whatever it takes.</p><br>
+            <a href="aatmabodh/aatmabodh.html" target="_blank">Know MORE</a>
+        </div>
+    </div>
+</div>
+<!-- Rejuvenating Rashtra 2.0 -->
+<div class="container">
+    <div class="row">
+        <div class="column-66">
+            <h2 class="xlarge-font" style="color: rgb(218, 230, 64);">Rejuvenating Rashtra 2.0</h2><br>
+            <p>This year the club organised a 6-day event Rejuvenating Rashtra 2.0 which we believe invigorated a
+                new spark among each one of us to do more and work for the welfare of the society. We had various
+                speakers conduct the session on few of the crucial issues that need attention at this hour. Hearing
+                about their journey and work invoked a passion among the attendees and boosted their enthusiasm
+                about social work.</p><br>
+            <a href="rr/rr.html" target="_blank">Know MORE</a>
+        </div>
+        <div class="column-33">
+            <figure class="swing">
+                <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/7kasuwLI3I4?autoplay=1&mute=1&showinfo=0&controls=0&loop=1&playlist=7kasuwLI3I4"
+                        allow="autoplay;" allowfullscreen></iframe>
+            </figure>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- photo gallery -->
+<div class="container-2"></div>
+<section class="section">
+    <h1 style="text-align: center;">Memory Lane</h1><br>
+    <div class="grid">
+        <div class="item">
+            <div class="item__details" style="color: #000; font-weight: bold;">
+                Utkarsh
+            </div>
+        </div>
+        <div class="item item--large">
+            <div class="item__details" style="color: #000; font-weight: bold;">
+                Mi Atrey Boltoy!
+            </div>
+        </div>
+        <div class="item item--medium">
+            <div class="item__details" style="color: #000; font-weight: bold;">
+                Aatmabodh
+            </div>
+        </div>
+        <div class="item item--large">
+            <div class="item__details" style="color: #000; font-weight: bold;">
+                Blood-D
+            </div>
+        </div>
+        <div class="item item--medium">
+            <div class="item__details" style="color: #000; font-weight: bold;">
+                Junior Aatmabodh
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__details" style="color: #000; font-weight: bold;">
+                Utkarsh
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <script type="text/javascript">
+        function mousehandler(e) {
+            var myevent = (isNS) ? e : event;
+            var eventbutton = (isNS) ? myevent.which : myevent.button;
+            if ((eventbutton == 2) || (eventbutton == 3)) return false;
+        }
+
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
+
+        function disableCtrlKeyCombination(e) {
+            var forbiddenKeys = new Array("a", "s", "c", "x", "u");
+            var key;
+            var isCtrl;
+            if (window.event) {
+                key = window.event.keyCode;
+                //IE
+                if (window.event.ctrlKey)
+                    isCtrl = true;
+                else
+                    isCtrl = false;
+            } else {
+                key = e.which;
+                //firefox
+                if (e.ctrlKey)
+                    isCtrl = true;
+                else
+                    isCtrl = false;
+            }
+            if (isCtrl) {
+                for (i = 0; i < forbiddenKeys.length; i++) {
+                    //case-insensitive comparation
+                    if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
