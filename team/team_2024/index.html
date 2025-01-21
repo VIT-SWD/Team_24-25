@@ -4,11 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="./../swdlogo3.png" rel="icon" />
     <title>Team 24-3</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Sumana:wght@700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Sumana:wght@700&display=swap");
 
         .html,
         body {
@@ -380,8 +395,10 @@
         }
 
         .section-title h1 {
-            font-size: 46px;
-            letter-spacing: 2px;
+            color: #353535;
+            font-size: 50px;
+            letter-spacing: 5px;
+            font-weight: 500;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -976,6 +993,176 @@
             cursor: grabbing;
             cursor: -webkit-grabbing;
         }
+
+
+           /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+    #footer {
+        background: #234d20;
+        padding: 0 0 25px 0;
+        color: #eee;
+        font-size: 14px;
+    }
+
+    #footer .footer-top {
+        background: #040919;
+        padding: 60px 0 30px 0;
+    }
+
+    #footer .footer-top .footer-info {
+        margin-bottom: 30px;
+    }
+
+    #footer .footer-top .footer-info h3 {
+        font-size: 26px;
+        margin: 0 0 20px 0;
+        padding: 2px 0 2px 0;
+        line-height: 1;
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    #footer .footer-top .footer-info img {
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    #footer .footer-top .footer-info p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        font-family: "Raleway", sans-serif;
+        color: #fff;
+    }
+
+    #footer .footer-top .social-links a {
+        display: inline-block;
+        background: #222636;
+        color: #eee;
+        line-height: 1;
+        margin-right: 4px;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        transition: 0.3s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #footer .footer-top .social-links a i {
+        line-height: 0;
+        font-size: 16px;
+    }
+
+    #footer .footer-top .social-links a:hover {
+        background: #c9df8a;
+        color: #fff;
+    }
+
+    #footer .footer-top h4 {
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #c9df8a;
+    }
+
+    #footer .footer-top .footer-links {
+        margin-bottom: 30px;
+    }
+
+    #footer .footer-top .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #footer .footer-top .footer-links ul i {
+        padding-right: 5px;
+        color: #c9df8a;
+        font-size: 18px;
+    }
+
+    #footer .footer-top .footer-links ul li {
+        border-bottom: 1px solid #262c44;
+        padding: 10px 0;
+    }
+
+    #footer .footer-top .footer-links ul li:first-child {
+        padding-top: 0;
+    }
+
+    #footer .footer-top .footer-links ul a {
+        color: #eee;
+    }
+
+    #footer .footer-top .footer-links ul a:hover {
+        color: #c9df8a;
+    }
+
+    #footer .footer-top .footer-contact {
+        margin-bottom: 30px;
+    }
+
+    #footer .footer-top .footer-contact p {
+        line-height: 26px;
+    }
+
+    #footer .footer-top .footer-newsletter {
+        margin-bottom: 30px;
+    }
+
+    #footer .footer-top .footer-newsletter input[type=email] {
+        border: 0;
+        padding: 6px 8px;
+        width: 65%;
+    }
+
+    #footer .footer-top .footer-newsletter input[type=submit] {
+        background: #c9df8a;
+        border: 0;
+        width: 35%;
+        padding: 6px 0;
+        text-align: center;
+        color: #fff;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    #footer .footer-top .footer-newsletter input[type=submit]:hover {
+        background: #c9df8a;
+    }
+
+    #footer .copyright {
+        background: #234d20;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #footer .credits {
+        text-align: center;
+        font-size: 13px;
+        color: #ddd;
+    }
+
+    @media  screen and (max-width: 480px) {
+        .row-f {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
     </style>
 </head>
 
@@ -1031,7 +1218,7 @@
                     </nav>
 
                 </div>
-                <div class="col-6">
+                <div class="col-6" style="text-align: right; width: 35%;">
                     <span>
                         <div id="logonav" class="ms-auto">
                             <a href="#" class="scrollto"><img src="../nsslogo.png" alt="" title=""></a>
@@ -1048,7 +1235,7 @@
         <div class="section-title">
             <h1>Team 2024-2025</h1><br>
             <h1>Leads</h1><br>
-            <h3 style="margin-left: 7%; max-width: 90%; font-size: calc(1.2rem); color: #555555; ">Great teams aren’t
+            <h3 style="margin-left: 7%; max-width: 90%; font-size: calc(1.4rem); color: #555555; font-style: italic; font-weight: 700; ">Great teams aren’t
                 born—they’re built with trust, effort, and shared vision.</h3>
         </div>
         <br>
@@ -1099,8 +1286,8 @@
     <br><br>
 
     <!-- Secretary -->
-    <h1 style="font-weight: bold; font-size: 40px;">Secretary</h1>
-    <p class="lead mt-4 text-center" style="max-width: 90%;">The strong catalysts dedicated to organizing and promoting
+    <h1 style="font-weight: bold; font-size: 40px; text-align: center;">Secretary</h1>
+    <p class="lead mt-4  text-center" style="max-width: 100%; padding: 0px 40px;">The strong catalysts dedicated to organizing and promoting
         impactful initiatives that drive community engagement and social development. </p>
 
     <div class="pr-section row align-items-center justify-content-start">
@@ -2345,8 +2532,8 @@
     </div>
     <footer id="footer">
         <div class="footer-top">
-            <div class="container">
-                <div class="row">
+            <div class="container-f">
+                <div class="row-f" style="display: flex; justify-content: center; overflow: hidden; padding: 0px 20px; width: 90%; margin: 10px auto; gap: 15px;">
 
                     <div class="col-lg-3 col-md-6 footer-info">
                         <img src="./../../img/swdlogo3.png" alt="Logo" style="width:20%; height:auto;">
@@ -2420,7 +2607,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container-f">
             <div class="copyright">
                 &copy; 2023-24 Social Welfare & Development Committee, VIT Pune.
             </div>
@@ -2512,6 +2699,122 @@
             scroller.addEventListener('touchcancel', () => {
                 isDown = false;
             });
+        });
+    </script>
+    <script>
+        /**
+         * Easy selector helper function
+         */
+        const select = (el, all = false) => {
+            el = el.trim()
+            if (all) {
+                return [...document.querySelectorAll(el)]
+            } else {
+                return document.querySelector(el)
+            }
+        }
+
+        /**
+         * Easy event listener function
+         */
+        const on = (type, el, listener, all = false) => {
+            let selectEl = select(el, all)
+            if (selectEl) {
+                if (all) {
+                    selectEl.forEach(e => e.addEventListener(type, listener))
+                } else {
+                    selectEl.addEventListener(type, listener)
+                }
+            }
+        }
+
+        /**
+         * Easy on scroll event listener
+         */
+        const onscroll = (el, listener) => {
+            el.addEventListener('scroll', listener)
+        }
+
+        /**
+         * Navbar links active state on scroll
+         */
+        let navbarlinks = select('#navbar .scrollto', true)
+        const navbarlinksActive = () => {
+            let position = window.scrollY + 200
+            navbarlinks.forEach(navbarlink => {
+                if (!navbarlink.hash) return
+                let section = select(navbarlink.hash)
+                if (!section) return
+                if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+                    navbarlink.classList.add('active')
+                } else {
+                    navbarlink.classList.remove('active')
+                }
+            })
+        }
+        window.addEventListener('load', navbarlinksActive)
+        onscroll(document, navbarlinksActive)
+        /**
+         * Toggle .header-scrolled class to #header when page is scrolled
+         */
+        let selectHeader = select('#header')
+        if (selectHeader) {
+            const headerScrolled = () => {
+                if (window.scrollY > 100) {
+                    selectHeader.classList.add('header-scrolled')
+                } else {
+                    selectHeader.classList.remove('header-scrolled')
+                }
+            }
+            window.addEventListener('load', headerScrolled)
+            onscroll(document, headerScrolled)
+        }
+        /**
+         * Mobile nav toggle
+         */
+        on('click', '.mobile-nav-toggle', function (e) {
+            select('#navbar').classList.toggle('navbar-mobile')
+            this.classList.toggle('bi-list')
+            this.classList.toggle('bi-x')
+        })
+
+        /**
+         * Mobile nav dropdowns activate
+         */
+        on('click', '.navbar .dropdown > a', function (e) {
+            if (select('#navbar').classList.contains('navbar-mobile')) {
+                e.preventDefault()
+                this.nextElementSibling.classList.toggle('dropdown-active')
+            }
+        }, true)
+
+        /**
+         * Scrool with ofset on links with a class name .scrollto
+         */
+        on('click', '.scrollto', function (e) {
+            if (select(this.hash)) {
+                e.preventDefault()
+
+                let navbar = select('#navbar')
+                if (navbar.classList.contains('navbar-mobile')) {
+                    navbar.classList.remove('navbar-mobile')
+                    let navbarToggle = select('.mobile-nav-toggle')
+                    navbarToggle.classList.toggle('bi-list')
+                    navbarToggle.classList.toggle('bi-x')
+                }
+                scrollto(this.hash)
+            }
+        }, true)
+
+        /**
+         * Scroll with ofset on page load with hash links in the url
+         */
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                if (select(window.location.hash)) {
+                    scrollto(window.location.hash)
+                }
+            }
         });
     </script>
 
